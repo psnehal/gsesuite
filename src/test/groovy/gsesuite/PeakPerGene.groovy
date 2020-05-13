@@ -1,0 +1,5 @@
+package gsesuite
+
+@interface PeakPerGene {
+
+}
