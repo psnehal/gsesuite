@@ -51,6 +51,7 @@ class PeaktogenejobService  implements SchwartzJob
         String filename = peakgn.filename
         String newfilepath = outpath+"/"+filename
         String ld = peakgn.ld
+        String sglist= peakgn.sglist
 
 
 
@@ -59,6 +60,7 @@ class PeaktogenejobService  implements SchwartzJob
         println("newfilepath= " + newfilepath)
         println("outpath=" + outpath)
         println("ld = " + ld)
+        println("sglist = " + sglist)
 
 
         RConnection connection = new RConnection("127.0.0.1", 6311)
@@ -75,14 +77,18 @@ class PeaktogenejobService  implements SchwartzJob
         connection.assign("peaks", newfilepath);
         connection.assign("outname", outname);
         connection.assign("outpath", outpath);
-        connection.assign("genomedata", "hg19");
+        //connection.assign("genomedata", "hg19");
         connection.assign("ld", ld);
+        connection.assign("genome", sglist);
+
+
+        //genome = supported_genomes(),
 
         def command = "  peaks2genesResults <- peaks2genes( " +
                 "  peaks" +
                 ", out_name = outname " +
                 ", out_path = outpath" +
-                ", genome = genomedata " +
+                ", genome = genome " +
                 ", locusdef = ld " +
                 ", mappability = NULL" +
                 ", qc_plots = TRUE" +
@@ -136,8 +142,8 @@ class PeaktogenejobService  implements SchwartzJob
             println("in db save error")
         }
 
-        println("outof exception")
-        log.info 'Done with the job :: {} ', uuid
+        println("status: $status")
+       // println 'Done with the job :: {} ', uuid
     }
 
     @Override

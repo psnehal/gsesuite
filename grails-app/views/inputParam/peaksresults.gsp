@@ -58,6 +58,8 @@
 
             $('[data-toggle="popover"]').popover(  { html:true  });
 
+            $('[data-toggle="tooltip"]').tooltip();
+
 
 
 
@@ -82,7 +84,7 @@
                                     <a class="nav-link active" href="#"><g:link action="peaksresults" params="[uuid: "${uuid}"]">Peak-to-gene assignments</g:link></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link " href="#"><g:link action="peakpergeneresult" params="[uuid: "${uuid}"]">Pers per Gene</g:link></a>
+                                    <a class="nav-link " href="#"><g:link action="peakpergeneresult" params="[uuid: "${uuid}"]">Peaks per Gene</g:link></a>
                                 </li>
 
                             </ul>
@@ -110,12 +112,17 @@
                                 <thead>
                                 <tr>
                                     <th>Chrom</th>
-                                    <th nowrap="nowrap">Peak Start </th>
-                                    <th nowrap="nowrap">Peak End </th>
-                                    <th>Gene ID</th>
+                                    <th nowrap="nowrap"> <a href="#" data-toggle="tooltip" data-placement="top" title="Start point of Input Genomic region;">Peak Start </span> <span class="glyphicon glyphicon-question-sign"></span></a>
+                                         </th>
+                                    <th nowrap="nowrap"><a href="#" data-toggle="tooltip" data-placement="top" title="End point of Input Genomic region;">Peak End </span> <span class="glyphicon glyphicon-question-sign"></span></a></th>
+                                    <th>Entrez Gene ID</th>
                                     <th nowrap="nowrap">Gene Symbol</th>
-                                    <th nowrap="nowrap"  data-toggle="popover" data-trigger="hover" title="the start point of the annotation region (eg. promoter, enhancer, distal region, etc.) that are assigned to the gene;">Annotation Start</th>
-                                    <th nowrap="nowrap" data-toggle="popover" data-trigger="hover" title=" the end point of the annotation region (eg. promoter, enhancer, distal region, etc.) that are assigned to the gene">Annotation End</th>
+                                    <th nowrap="nowrap"  data-toggle="popover" data-trigger="hover" title="">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="the start point of the annotation region (eg. promoter, enhancer, distal region, etc.) that are assigned to the gene;">Annotation Start <span class="glyphicon glyphicon-question-sign"></span></a>
+                                    </th>
+                                    <th nowrap="nowrap" data-toggle="popover" data-trigger="hover" title=" ">
+                                        <a href="#" data-toggle="tooltip" data-placement="top" title="the end point of the annotation region (eg. promoter, enhancer, distal region, etc.) that are assigned to the gene;">Annotation End </span> <span class="glyphicon glyphicon-question-sign"></span></a>
+                                        </th>
 
 
                                 </tr>

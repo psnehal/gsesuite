@@ -114,7 +114,8 @@
                                 <thead>
                         <tr>
 
-                            <th nowrap="nowrap">Gene ID</th>
+                            <th nowrap="nowrap">Entrez Gene ID</th>
+                            <th nowrap="nowrap">Gene Symbol</th>
                             <th nowrap="nowrap">Length</th>
                             <th nowrap="nowrap">Log 10 length</th>
                             <th nowrap="nowrap">Number of peaks</th>
@@ -124,10 +125,11 @@
                         <tbody id="insertfirsttable">
                         <g:each var="prop" in="${peaklist}" index="i">
                             <tr>
-                                <td>${prop.getGeneid()}</td>
-                                <td>${prop.getLength()}</td>
-                                <td>${prop.getLog10len()}</td>
-                                <td>${prop.getNumpeaks()}</td>
+                                <td>${prop.geneid}</td>
+                                <td>${prop.symbol}</td>
+                                <td>${prop.length}</td>
+                                <td>${prop.log10len}</td>
+                                <td>${prop.numpeaks}</td>
 
                             </tr>
                         </g:each>

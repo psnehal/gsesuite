@@ -51,7 +51,7 @@ class InputParamController {
         println(uuid)
         def peakgn = Peakpergene.findByUuid(uuid)
 
-        println(peakgn)
+       // println(peakgn)
 
         def datadirpath =''
         if (Environment.current == Environment.DEVELOPMENT) {
@@ -129,7 +129,7 @@ class InputParamController {
 //String chrom, String peakS, String peakE, String pmid, String geneid, String geneSym, String lstart, String lend, String ntss, String dtss, String ntssgene, String tssgs, String ntssgenestrand, String log_dtss, String loggene, String scaled_dtss) {
 //		this.chrom = chrom;
 
-        println(peaklist)
+        //println(peaklist)
 
         if(params?.f && params.f != "html"){
             response.contentType = grailsApplication.config.grails.mime.types[params.f]
@@ -151,8 +151,9 @@ class InputParamController {
 
     }
 
-    def peaktogenerror()
+    def peaktogeneerror()
     {
+        println("from peaktogeneerror")
 
         def uuid = params.uuid
         def status = params.status
@@ -164,13 +165,18 @@ class InputParamController {
 
     def connectdatabase() {
 
+        //println("inside  : "+params)
+
+
         def uuid = params.uuid
-        //println("connectdatabase : "+uuid)
+
 
         def peakpergene = Peakpergene.findByUuid(uuid)
         def status = peakpergene.jobstatus
 
         def statusfinal= uuid+"\t"+status
+
+        //println("connectdatabase : "+statusfinal)
 
         render statusfinal
 
@@ -243,13 +249,56 @@ class InputParamController {
 
         //String geneid, Double length, Double log10len, Integer numpeaks, int peak)
 
+
+        def geneids = peaklist.geneid
+
+        def geneinfo = GeneInfo.createCriteria()
+
+        def geneidsymbol = geneinfo.list
+                {
+                    projections {
+                        property('geneid')
+                        property('symbol')
+
+                    }
+
+                            'in'("geneid",geneids)
+
+                }
+
+
+
+        //println(geneidsymbol)
+
+        Map<String, String> map = new HashMap<>();
+
+        for(int i = 0 ; i < geneidsymbol.size(); i ++)
+        {
+
+            //println(geneidsymbol.get(i)[0])
+
+            map.put(geneidsymbol.get(i)[0],geneidsymbol.get(i)[1])
+        }
+
+
+        println(map.get('101101772'))
+
+
+
+
+        def peaklistfinal = peaklist.collect {en ->
+            return [geneid:en.geneid, length: en.length, log10len: en.log10len, numpeaks: en.numpeaks,symbol: map.get(en.geneid)]
+        }
+
+       def downfilename = "peaks_per_gene"
+
         if(params?.f && params.f != "html"){
             response.contentType = grailsApplication.config.grails.mime.types[params.f]
-            response.setHeader("Content-disposition", "attachment; filename=${filename}")
+            response.setHeader("Content-disposition", "attachment; filename=${downfilename}")
 
-            List fields = ["geneid", "length", "log10len","numpeaks"]
-            Map labels = ["geneid":"GeneID", "length":"Length", "log10len":"Log 10 Length", "numpeaks":"No of peaks"]
-            exportService.export(params.f, response.outputStream,peaklist,fields, labels, [:], [:])
+            List fields = ["geneid", "symbol","length", "log10len","numpeaks"]
+            Map labels = ["geneid":"GeneID","symbol":"Symbol", "length":"Length", "log10len":"Log 10 Length", "numpeaks":"No of peaks",]
+            exportService.export(params.f, response.outputStream,peaklistfinal,fields, labels, [:], [:])
 
             response.getOutputStream().flush();
             response.getOutputStream().close();
@@ -258,7 +307,42 @@ class InputParamController {
 
         println (peaklist.size())
 
-        [peaklist:peaklist,listsize:peaklist.size(),uuid:params.uuid]
+
+
+        [peaklist:peaklistfinal,listsize:peaklistfinal.size(),uuid:params.uuid]
+    }
+
+
+    def findsymbol()
+    {
+
+
+
+    }
+
+    def downloadFile()
+    {
+
+        def filename = params.filename
+
+        def datadirpath
+
+        def runanalysis
+
+
+        if (Environment.current == Environment.DEVELOPMENT) {
+            datadirpath = '/Users/snehalpatil/Documents/GithubProjects/gsesuite-data/locusdefs/'
+        } else
+        if (Environment.current == Environment.TEST) {
+            datadirpath = '/Users/snehalpatil/Documents/GithubProjects/PRSwebData/shareSnehal/data/'
+        } else
+        if (Environment.current == Environment.PRODUCTION) {
+            datadirpath = '/var/lib/tomcat8/webapps/data/locusdefs/'
+        }
+
+        def filepath = datadirpath+filename
+
+        render file: new File (filepath), fileName: filename,contentType: 'text/rtf'
     }
 
     def peakToGeneStatus()
@@ -266,6 +350,8 @@ class InputParamController {
 
 
         println(params)
+
+        def sglist=params.sglist
 
         def uploadfile = request.getFile('myfile')
         def uploadfilename = uploadfile.originalFilename
@@ -289,7 +375,7 @@ class InputParamController {
         def dirpath1
 
         if (Environment.current == Environment.DEVELOPMENT) {
-            dirpath1 = "/Users/snehalpatil/Documents/DataFiles/peak2genes/"
+            dirpath1 = "/Users/snehalpatil/Documents/DataFiles/peak2gene/"
         } else
         if (Environment.current == Environment.TEST) {
             dirpath1 = '/Users/snehalpatil/Documents/GithubProjects/PRSwebData/shareSnehal/data/'
@@ -310,6 +396,11 @@ class InputParamController {
 
 
         def newfilepath = dirpath + '/' + uploadfilename
+
+        println("outname2:"+newfilepath)
+        uploadfile.transferTo(new File(newfilepath))
+
+
 
         def slist = params.slist
 
@@ -333,8 +424,7 @@ class InputParamController {
 
 
 
-        println("outname2:"+newfilepath)
-        uploadfile.transferTo(new File(newfilepath))
+
 
         /*String uuid
         String outname2
@@ -344,99 +434,157 @@ class InputParamController {
 
         def ld = ""
 
+        def custld
 
-
-        if(slist.equals("enhan"))
+        if(slist.equals("enhan")|| slist.equals("distal"))
         {
 
             println("got the enhancer")
+            def metregions
 
-            def metregions = String.join("_",params.regions)
-            def mettargets = String.join("_",params.targets)
-            def custld = metregions+".0."
-            if(params.targets.contains("P2P"))
+            if(params.regions != null)
             {
-                custld = custld + "P2P_"
-            }
+                println("Got the regions")
 
-            def target1 = params.targets1
-
-            if(target1)
-            {
-
-                if(params.targets1.contains("E1"))
-                {
-                    custld = custld + 'E'
-                }
-                else if(params.targets1.contains("E2"))
-                {
-                    custld = custld + 'E2'
-                }
-                else  if(params.targets1.contains("E3"))
-                {
-                    custld = custld + 'E3'
-                }
-
+                 metregions = String.join("_",params.regions)
+                custld=metregions+".0."
 
 
             }
 
+            def methods = params.method
 
 
-
-            if(params.targets.contains("thurman") || params.targets.contains("fantom"))
+            if(methods.equals("general"))
             {
 
-                println("just add  underscore")
-
-                custld= custld+"_"
 
 
-            }
+                if(params.gtargets != null)
+                {
+                    def mettargets = String.join("_",params.gtargets)
+                    if(params.gtargets.contains("P2P"))
+                    {
+                        custld = custld + "P2P"
+                    }
 
+                }
 
+                def target1 = params.gtargets1
 
-            if(params.targets.contains("thurman"))
-            {
+                println(target1)
 
-                if(params.targets.contains("fantom"))
+                if(target1)
                 {
 
+
+
+                    if(target1.equals("E1"))
+                    {
+                        custld = custld + '_E'
+                    }
+                    else if(target1.equals("E2"))
+                    {
+                        custld = custld + '_E2'
+                    }
+                    else  if(target1.equals("E3"))
+                    {
+                        custld = custld + '_E3'
+                    }
+
+
+
+                }
+                if(params.gtargets.contains("thurman"))
+                {
+                        custld = custld + '_thurman'
+                }
+                if(params.gtargets.contains("fantom"))
+                {
                     println("thurman loo[  with fantom")
-                    custld = custld + 'thurman_fantom'
+                    custld = custld + '_fantom'
 
                 }
-                else
+                if(params.gtargets.contains("chromhmm"))
                 {
-                    custld = custld + 'thurman'
-                }
 
-            }
-            else{
 
-                if(params.targets.contains("fantom")) {
-
-                    custld = custld + 'fantom'
-
+                    custld = custld + '_chromhmm'
 
                 }
 
 
+                custld = custld+".ldef.gz"
+
+
+
+                custld= custld.replace("0._","0.").replace("__","_")
+
+
+
 
 
             }
+            else if (methods.equals("cellspe"))
+            {
+                def cellline = params.ctargets
+                def loops = params.ctargets1
+                def cmethod= params.ctargets2
+                if(cellline)
+                {
+                    if(cmethod)
+                    {
+
+                        custld = custld + cmethod+"_"+cellline
+
+                    }
+
+                    if(loops)
+                    {
 
 
 
-            custld = custld+".ldef.gz"
+
+
+                            if(loops.equals("E1"))
+                            {
+                                loops =  'E'
+                            }
 
 
 
 
 
+                        if(cmethod)
+                        {
+                            custld=custld+"_"
+                        }
+
+                        custld= custld+loops+"_"+cellline
+
+                    }
+
+
+
+                }
+
+
+                custld = custld+".ldef.gz"
+                custld= custld.replace("0._","0.").replace("__","_")
+
+
+
+
+
+
+
+
+
+            }
             //thurman_fantom.1000.P2P_E2_thurman_fantom_nearest_All.ldef
 
             //custld = custld+mettargets+"_nearest_All.ldef"
+
 
             println(custld)
 
@@ -458,100 +606,148 @@ class InputParamController {
 
                 println("file doesn not exissts")
                 runanalysis ='false'
+                println(ld)
+
             }
 
 
         }
+
         else if(slist.equals("dist"))
         {
 
             println("All distal regions (using enhancer-target gene links where available")
+            def metregions
 
-            def metregions = String.join("_",params.regions)
-            def mettargets = String.join("_",params.targets)
-            def custld = metregions+".0."
-            if(params.targets.contains("P2P"))
+            if(params.regions != null)
             {
-                custld = custld + "P2P_"
+                println("Got the regions")
+
+                metregions = String.join("_",params.regions)
+                custld=metregions+".0."
+
+
             }
 
-            def target1 = params.targets1
+            def methods = params.method
 
-            if(target1)
+
+            if(methods.equals("general"))
             {
-                println("in targetone loop")
+
+
+
+                if(params.gtargets != null)
+                {
+                    def mettargets = String.join("_",params.gtargets)
+                    if(params.gtargets.contains("P2P"))
+                    {
+                        custld = custld + "P2P"
+                    }
+
+                }
+
+                def target1 = params.gtargets1
+
                 println(target1)
 
-                if(params.targets1.contains("E1"))
+                if(target1)
                 {
-                    custld = custld + 'E'
+
+
+
+                    if(target1.equals("E1"))
+                    {
+                        custld = custld + '_E'
+                    }
+                    else if(target1.equals("E2"))
+                    {
+                        custld = custld + '_E2'
+                    }
+                    else  if(target1.equals("E3"))
+                    {
+                        custld = custld + '_E3'
+                    }
+
+
+
                 }
-                else if(params.targets1.contains("E2"))
+                if(params.gtargets.contains("thurman"))
                 {
-                    custld = custld + 'E2'
+                    custld = custld + '_thurman'
                 }
-                else  if(params.targets1.contains("E3"))
+                if(params.gtargets.contains("fantom"))
                 {
-                    custld = custld + 'E3'
-                }
-
-
-            }
-
-
-            if(params.targets.contains("thurman") || params.targets.contains("fantom"))
-            {
-
-                println("just add  underscore")
-
-                custld= custld+"_"
-
-
-            }
-
-
-
-            if(params.targets.contains("thurman"))
-            {
-
-                if(params.targets.contains("fantom"))
-                {
-
                     println("thurman loo[  with fantom")
-                    custld = custld + 'thurman_fantom'
+                    custld = custld + '_fantom'
 
                 }
-                else
+                if(params.gtargets.contains("chromhmm"))
                 {
-                    custld = custld + 'thurman'
-                }
 
-            }
-            else{
 
-                if(params.targets.contains("fantom")) {
-
-                    custld = custld + 'fantom'
-
+                    custld = custld + '_chromhmm'
 
                 }
 
 
+                custld = custld+"_nearest_All.ldef.gz"
+
+
+
+                custld= custld.replace("0._","0.").replace("__","_")
+
+
+
 
 
             }
+            else if (methods.equals("cellspe"))
+            {
+                def cellline = params.ctargets
+                def loops = params.ctargets1
+                def cmethod= params.ctargets2
+                if(cellline)
+                {
+                    if(cmethod)
+                    {
+
+                        custld = custld + cmethod+"_"+cellline
+
+                    }
+
+                    if(loops)
+                    {
+                        if(cmethod)
+                        {
+                            custld=custld+"_"
+                        }
+
+                        custld= custld+loops+"_"+cellline
+
+                    }
 
 
 
-            custld = custld+"_nearest_All.ldef.gz"
+                }
+
+
+                custld = custld+"_nearest_All.ldef.gz"
+                custld= custld.replace("0._","0.").replace("__","_")
 
 
 
 
 
+
+
+
+
+            }
             //thurman_fantom.1000.P2P_E2_thurman_fantom_nearest_All.ldef
 
             //custld = custld+mettargets+"_nearest_All.ldef"
+
 
             println(custld)
 
@@ -561,10 +757,10 @@ class InputParamController {
             if(f.exists() && !f.isDirectory()) {
                 println("file exissts")
 
-                runanalysis = true
+                ld = filePathString
 
-                ld= filePathString
-
+                runanalysis = "true"
+                //registerService.register(uuid.toString())
                 //PeaktogenejobService.triggerNow([uuid:uuid] )
 
 
@@ -573,10 +769,13 @@ class InputParamController {
 
                 println("file doesn not exissts")
                 runanalysis ='false'
+                println(ld)
+
             }
 
 
         }
+
         else{
 
             ld = params.ld
@@ -594,7 +793,7 @@ class InputParamController {
         if(runanalysis.equals("true"))
         {
             println("its true")
-            def cpara= new Peakpergene(uuid:uuid,outname:"test",jobstatus:"queued",filename:uploadfilename,ld:ld)
+            def cpara= new Peakpergene(uuid:uuid,outname:"test",jobstatus:"queued",filename:uploadfilename,ld:ld,sglist:sglist)
 
             cpara.save(insert:true)
             if (!cpara.save()) {
@@ -628,7 +827,7 @@ class InputParamController {
 
 
 
-        [uuid:uuid,runanalysis:runanalysis,ld:ld]
+        [uuid:uuid,runanalysis:runanalysis,ld:ld.replace(datadirpath,""),custld:custld,method:slist]
 
 
     }
@@ -722,7 +921,29 @@ def main() {
 }
 def contact() {
 
+
+    println(params)
+
 }
+
+    def sendemail()
+    {
+        println(params)
+
+        JavaMailer jm = new JavaMailer();
+        jm.sendMail("pepcentric@gmail.com", "tatagroup" , "inspiresnehal@gmail.com", "TITLE", "TEXT");
+
+
+
+
+
+
+
+
+
+    }
+
+
 
 
 def chipInput(){

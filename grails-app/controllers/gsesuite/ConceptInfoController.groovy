@@ -220,11 +220,11 @@ class ConceptInfoController {
 
 
 
-       // println (board)
+        println (board)
         UUID uuid = UUID.randomUUID();
 
         def filename = uuid.toString()+".txt"
-        def fpath  = '/Users/snehalpatil/Documents/GithubProjects/gsesuite/heatmaps/'+filename
+        def fpath  = '/Users/snehalpatil/Documents/GithubProjects/gsesuite-data/heatmap/'+filename
 
 
         PrintStream ps;
@@ -252,11 +252,11 @@ class ConceptInfoController {
         }
 
 
-        String command = "/Users/snehalpatil/Documents/GithubProjects/gsesuite/gsesuite/grails-app/controllers/gsesuite/createJsonscript.py "+"-f test2.txt"
+        //String command = "/Users/snehalpatil/Documents/GithubProjects/gsesuite/gsesuite/grails-app/controllers/gsesuite/createJsonscript.py "+"-f test2.txt"
 
 
 
-        def cmd = ["/usr/local/bin/python",  "/Users/snehalpatil/Documents/GithubProjects/gsesuite/gsesuite/grails-app/controllers/gsesuite/createJsonscript.py", filename]
+        def cmd = ["python3",  "/Users/snehalpatil/Documents/GithubProjects/gsesuite-master/grails-app/controllers/gsesuite/createJsonscript.py", filename]
         def proc = cmd.execute()
         proc.waitFor()
         println proc?.err?.text

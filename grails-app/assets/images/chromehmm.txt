@@ -1,0 +1,10 @@
+Cell Line
+GM12878	 
+H1-hESC	
+K562	   
+HepG2	 
+HUVEC	 
+HMEC	
+HSMM	 
+NHEK	 
+NHLF	

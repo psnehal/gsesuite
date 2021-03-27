@@ -1,0 +1,661 @@
+﻿Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+A549,epithelial cell,Duke/UW,Y,M,ATCC CCl-185,http://genome.ucsc.edu/ENCODE/protocols/
+,line derived,,,,,cell/human/A549_Stam_protocol.pdf
+,from a lung,,,,,
+,carcinoma,,,,,
+,tissue,,,,,
+GM12878,lymphoblastoid,Duke/UW,Y,F,Coriell GM12878,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/GM12878_protocol.pdf
+HESC,H1 Human,Duke/UW,N,M,Cellular Dynamics,http://genome.ucsc.edu/ENCODE/protocols/
+Embryonic,,,,,cell/human/H1_ES_protocol.pdf,
+,Stem Cells,,,,,
+HeLa-S3,cervical,Duke/UW,Y,F,ATCC CCL-2.2,http://genome.ucsc.edu/ENCODE/protocols/
+,carcinoma,,,,,cell/human/HeLa-S3_protocol.pdf
+HepG2,liver carcinoma,Duke/UW,Y,M,ATCC HB-8065,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/HepG2_protocol.pdf
+HMEC,Human,Duke/UW,Y,F,Lonza CC-3150,http://genome.ucsc.edu/ENCODE/protocols/
+,Mammary,,,,,cell/human/HMEC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+HSMM,Normal Human,Duke/UW,N,B,Lonza CC-2580,http://genome.ucsc.edu/ENCODE/protocols/
+Skeletal,,,,,cell/human/HSMM_Stam_protocol.pdf,
+Muscle,,,,,,
+,Myoblasts,,,,,
+HSMM,Normal Human,Duke/UW,N,B,Lonza CC-2580,http://genome.ucsc.edu/ENCODE/protocols/
+tube,Skeletal,,,,,cell/human/HSMM_Stam_protocol.pdf
+,Muscle,,,,,
+,Myoblasts,,,,,
+HUVEC,Human,Duke/UW,Y,U,Lonza CC-2517,http://genome.ucsc.edu/ENCODE/protocols/
+Umbilical Vein,,,,,cell/human/HUVEC_Stam_protocol.pdf,
+,Endothelial Cell,,,,,
+K562,leukemia,Duke/UW,Y,F,ATCC CCL-243,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/K562_protocol.pdf
+LNCaP,prostate,Duke/UW,Y,M,ATCC CRL-1740,http://genome.ucsc.edu/ENCODE/protocols/
+adeno-,,,,cell/human/LNCaP_Stam_protocol.pdf,,
+,carcinoma,,,,,
+MCF-7,mammary,Duke/UW,Y,F,ATCC HTB-22,http://genome.ucsc.edu/ENCODE/protocols/
+,"gland, adeno-",,,,,cell/human/Stam_15_protocols.pdf
+,carcinoma,,,,,
+Th1,primary human,Duke/UW,N,U,primary pheresis of single,http://genome.ucsc.edu/ENCODE/protocols/
+,Th1 T cells,,,,normal subject,cell/human/Stam_15_protocols.pdf
+NHEK,Normal Human,Duke/UW,Y,F,Lonza CC-2501,http://genome.ucsc.edu/ENCODE/protocols/
+,Epidermal,,,,,cell/human/Keratinocyte_protocol.pdf
+,Keratinocytes,,,,,
+AG04449,Fetal,UW,Y,M,Coriell AG04449,http://genome.ucsc.edu/ENCODE/protocols/
+buttock/thigh,,,,,cell/human/AGO4449_Stam_protocol.pdf,
+,fibroblast,,,,,
+AG04450,Fetal lung,UW,Y,M,Coriell AG04450,http://genome.ucsc.edu/ENCODE/protocols/
+,fibroblast,,,,,cell/human/AG04450_Stam_protocol.pdf
+AG09309,Adult human,UW,Y,F,Coriell AG09309,http://genome.ucsc.edu/ENCODE/protocols/
+,toe fibroblast,,,,,cell/human/AG09309_Stam_protocol.pdf
+AG09319,Adult human,UW,Y,F,Coriell AG09319,http://genome.ucsc.edu/ENCODE/protocols/
+,gum tissue,,,,,cell/human/AG09309_Stam_protocol.pdf
+,fibroblasts,,,,,
+AG10803,Adult human,UW,Y,M,Coriell AG10803,http://genome.ucsc.edu/ENCODE/protocols/
+abdominal skin,,,,,cell/human/AG10803_Stam_protocol.pdf,
+,fibroblasts,,,,,
+AoAF,Normal Human,UW,Y,F,"Lonza CC-7014,",http://genome.ucsc.edu/ENCODE/protocols/
+,Aortic,,,,CC-7014T75,cell/human/AoAF_Stam_protocol.pdf
+,Adventitial,,,,,
+,Fibroblast Cells,,,,,
+Thurman et al. 2011,,,,,,
+Page 24,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+BE2_C,Human,UW,Y,M,ATCC CRL-2268,http://genome.ucsc.edu/ENCODE/protocols/
+,neuroblastoma,,,,,cell/human/BE2-C_Stam_protocol.pdf
+BJ,skin fibroblast,UW,Y,M,ATCC CRL-2522,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/BJ-tert_Stam_protocol.pdf
+Caco-2,colorectal,UW,Y,M,ATCC HTB-37,http://genome.ucsc.edu/ENCODE/protocols/
+adeno-,,,,cell/human/Stam_15_protocols.pdf,,
+,carcinoma,,,,,
+CMK,Human Acute,UW,N,M,DSMZ ACC-392,http://genome.ucsc.edu/ENCODE/protocols/
+,Megakaryocytic,,,,,cell/human/CMK_Stam_protocol.pdf
+,Leukemia Cells,,,,,
+GM06990,B-Lymphocyte,UW,Y,F,Coriell GM06990,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/Stam_15_protocols.pdf
+GM12864,B-Lymphocyte,UW,Y,M,Coriell GM12864,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/GM12864_Stam_protocol.pdf
+GM12865,B-Lymphocyte,UW,Y,F,Coriell GM12865,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/GM12865_Stam_protocol.pdf
+H7-hESC,Un-,UW,Y,U,WiCell WA07(H7),http://genome.ucsc.edu/ENCODE/protocols/
+,differentiated,,,,,cell/human/H7-hESC_Stam_protocol.pdf
+,human,,,,,
+,embryonic,,,,,
+,stem cells,,,,,
+HAc,Human,UW,Y,U,ScienCell 1810,http://genome.ucsc.edu/ENCODE/protocols/
+Astrocytes-,,,,,cell/human/HAc_Stam_protocol.pdf,
+,cerebellar,,,,,
+HAEpiC,Human,UW,N,U,ScienCell 7100,http://genome.ucsc.edu/ENCODE/protocols/
+,Amniotic,,,,,cell/human/HAEpiC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+HAh,Human,UW,N,F,ScienCell 1830,http://genome.ucsc.edu/ENCODE/protocols/
+Astrocytes -,,,,,cell/human/HAh_Stam_protocol.pdf,
+,hippocampal,,,,,
+HA-sp,Human,UW,Y,U,ScienCell 1820,http://genome.ucsc.edu/ENCODE/protocols/
+,astrocytes,,,,,cell/human/HA-sp_Stam_protocol.pdf
+,spinal cord,,,,,
+HBMEC,Human Brain,UW,Y,U,ScienCell 1000,http://genome.ucsc.edu/ENCODE/protocols/
+Microvascular,,,,,cell/human/HBMEC_Myers_protocol.pdf,
+Endothelial,,,,,,
+,Cells,,,,,
+HCF,Human Cardiac,UW,Y,U,ScienCell 6300,http://genome.ucsc.edu/ENCODE/protocols/
+,Fibroblasts,,,,,cell/human/HCF_Stam_protocol.pdf
+HCFaa,Human Cardiac,UW,Y,F,ScienCell 6320,http://genome.ucsc.edu/ENCODE/protocols/
+Fibroblasts-,,,,,cell/human/HCFaa_Stam_protocol.pdf,
+,Adult Atrial,,,,,
+HCM,Human Cardiac,UW,Y,U,ScienCell 6200,http://genome.ucsc.edu/ENCODE/protocols/
+,Myocytes,,,,,cell/human/HCM_Stam_protocol.pdf
+HConF,Human,UW,N,U,ScienCell 6570,http://genome.ucsc.edu/ENCODE/protocols/
+Conjunctival,,,,,cell/human/HConF_Stam_protocol.pdf,
+,Fibroblast,,,,,
+HCPEpiC,Human,UW,Y,U,ScienCell 1310,http://genome.ucsc.edu/ENCODE/protocols/
+,Choroid Plexus,,,,,cell/human/HCPEpiC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+HCT-116,colorectal,UW,Y,M,ATCC CCL-247,http://genome.ucsc.edu/ENCODE/protocols/
+,carcinoma,,,,,cell/human/HCT116_Stam_protocol.pdf
+HEEpiC,Human,UW,Y,U,ScienCell 2700,http://genome.ucsc.edu/ENCODE/protocols/
+,Esophageal,,,,,cell/human/HEEpiC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+HFF,Human,UW,Y,M,"Dr. Torok-Storb, Fred",http://genome.ucsc.edu/ENCODE/protocols/
+Foreskin,,Hutchison Cancer,,,,cell/human/HFF_Stam_protocol.pdf
+,Fibroblast,,,,Research Center,
+HFF_Myc,Human,UW,Y,M,"Dr. Torok-Storb, Fred",http://genome.ucsc.edu/ENCODE/protocols/
+,Foreskin,,,,Hutchison Cancer,cell/human/HFF_Stam_protocol.pdf
+,Fibroblast,,,,Research Center,
+HGF,Human,UW,N,U,ScienCell 2620,http://genome.ucsc.edu/ENCODE/protocols/
+Gingival,,,,,cell/human/HGF_Stam_protocol.pdf,
+,Fibroblasts,,,,,
+HIPEpiC,Human Iris,UW,N,U,ScienCell 6560,http://genome.ucsc.edu/ENCODE/protocols/
+,Pigment,,,,,cell/human/HIPEpiC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+Thurman et al. 2011,,,,,,
+Page 25,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+HL-60,Human,UW,Y,F,ATCC CCL-240,http://genome.ucsc.edu/ENCODE/protocols/
+,promyelocytic,,,,,cell/human/HL-60_Stam_protocol.pdf
+,leukemia cells,,,,,
+HMF,Human,UW,N,F,ScienCell 7630,http://genome.ucsc.edu/ENCODE/protocols/
+,Mammary,,,,,cell/human/HMF_Stam_protocol.pdf
+,Fibroblast,,,,,
+HMVEC-,Adult Human,UW,N,U,Lonza CC-2543,http://genome.ucsc.edu/ENCODE/protocols/
+dAd,Dermal,,,,cell/human/HMVECdAd_Stam_protocol.pdf,
+,Microvascular,,,,,
+,Endothelial,,,,,
+,Cells,,,,,
+HMVEC-,Normal Adult,UW,N,F,"Lonza CC-2811,",http://genome.ucsc.edu/ENCODE/protocols/
+dBl-Ad,Human Blood,,,,CC-2811T75,cell/human/HMVEC-dBl-
+,Microvascular,,,,,Ad_Stam_protocol.pdf
+,"Endothelial
+Cells, Dermal-
+Derived",,,,,
+HMVEC-,Normal,UW,N,M,"Lonza CC-2813,",http://genome.ucsc.edu/ENCODE/protocols/
+dBl-Neo,Neonatal,CC-2813T75,,,cell/human/HMVEC-dBl-,
+,Human Blood,,,,Neo_Stam_protocol.pdf,
+,Microvascular,,,,,
+,Endothelial,,,,,
+,"Cells, Dermal-",,,,,
+,Derived,,,,,
+HMVEC-,Normal Adult,UW,N,F,"Lonza CC-2810,",http://genome.ucsc.edu/ENCODE/protocols/
+dLy-Ad,Human Blood,,,,CC-2810T75,cell/human/HMVEC-dLy-
+,Microvascular,,,,,Ad_Stam_protocol.pdf
+,"Endothelial
+Cells, Dermal-
+Derived",,,,,
+HMVEC-,Normal,UW,N,M,"Lonza CC-2812,",http://genome.ucsc.edu/ENCODE/protocols/
+dLy-Neo,Neonatal,CC-2812T25,,,cell/human/HMVEC-dLy-,
+,Human,,,,Neo_Stam_protocol.pdf,
+,Lymphatic,,,,,
+,Microvascular,,,,,
+,Endothelial,,,,,
+,"Cells, Dermal-",,,,,
+,Derived,,,,,
+HMVEC-,Normal,UW,N,M,"Lonza CC-2505,",http://genome.ucsc.edu/ENCODE/protocols/
+dNeo,Neonatal,,,,CC-2505T225,cell/human/HMVEC-
+,Human,,,,,dNeo_Stam_protocol.pdf
+,Microvascular,,,,,
+,Endothelial,,,,,
+,Cells (single,,,,,
+,"Donnor),",,,,,
+,Dermal-,,,,,
+,Derived,,,,,
+HMVEC-LBl,Normal Human,UW,N,F,"Lonza CC-2815,",http://genome.ucsc.edu/ENCODE/protocols/
+Blood,,CC-2815T75,,,cell/human/HMVEC-Lbl_Stam_protocol.pdf,
+Microvascular,,,,,,
+Endothelial,,,,,,
+"Cells, Lung-",,,,,,
+,Derived,,,,,
+HMVEC-,Normal Human,UW,N,F,"Lonza CC-2814,",http://genome.ucsc.edu/ENCODE/protocols/
+LLy,Lymphatic,,,,CC-2814T25,cell/human/HMVEC-LLy_Stam_protocol.pdf
+,Microvascular,,,,,
+,Endothelial,,,,,
+,"Cells, Lung-",,,,,
+,Derived,,,,,
+HNPC-EpiC,Human Non-,UW,N,U,ScienCell 6580,http://genome.ucsc.edu/ENCODE/protocols/
+Pigment Ciliary,,,,,cell/human/HNPCEpiC_Stam_protocol.pdf,
+,Epithelial Cells,,,,,
+HPAEC,Human,UW,N,U,Lonza CC-2530,http://genome.ucsc.edu/ENCODE/protocols/
+,Pulmonary,,,,,cell/human/HPAEC_Stam_protocol.pdf
+,Artery,,,,,
+,Endothelial,,,,,
+,Cells,,,,,
+Thurman et al. 2011,,,,,,
+Page 26,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+HPAF,Human,UW,Y,U,ScienCell 3120,http://genome.ucsc.edu/ENCODE/protocols/
+,Pulmonary,,,,,cell/human/HPAF_Stam_protocol.pdf
+,Artery,,,,,
+,Fibroblasts,,,,,
+HPdLF,Normal Human,UW,N,M,ScienCell 7409,http://genome.ucsc.edu/ENCODE/protocols/
+,Periodontal,,,,,cell/human/HPdLF_Stam_protocol.pdf
+,Ligament,,,,,
+,Fibroblast Cells,,,,,
+HPF,Human,UW,Y,U,ScienCell 3300,http://genome.ucsc.edu/ENCODE/protocols/
+Pulmonary,,,,,cell/human/HPF_Stam_protocol.pdf,
+,Fibroblasts,,,,,
+HRCEpiC,Human Renal,UW,N,U,Lonza CC-2554,http://genome.ucsc.edu/ENCODE/protocols/
+,Cortical,,,,,cell/human/HRCEpiC_Stam_protocol.pdf
+,Epithelial cells,,,,,
+,(normal),,,,,
+HRE,Human Renal,UW,Y,U,Lonza CC-2556,http://genome.ucsc.edu/ENCODE/protocols/
+Epithelial cells,,,,,cell/human/HRE_Stam_protocol.pdf,
+,(normal),,,,,
+HRGEC,Human Renal,UW,N,U,ScienCell 4000,http://genome.ucsc.edu/ENCODE/protocols/
+,Glomerular,,,,,cell/human/HRGEC_Stam_protocol.pdf
+,Endothelial,,,,,
+,Cells,,,,,
+HRPEpiC,Human Retinal,UW,Y,U,ScienCell 6540,http://genome.ucsc.edu/ENCODE/protocols/
+Pigment,,,,,cell/human/HRPEpiC_Stam_protocol.pdf,
+,Epithelial Cells,,,,,
+HVMF,Human Villous,UW,Y,U,ScienCell 7130,http://genome.ucsc.edu/ENCODE/protocols/
+,Mesenchymal,,,,,cell/human/HVMF_Stam_protocol.pdf
+,Fibroblast Cells,,,,,
+Jurkat,T lympho-,UW,Y,M,ATCC TIB-152,http://genome.ucsc.edu/ENCODE/protocols/
+blastoid cell,,,,,cell/human/Jurkat_Stam_protocol.pdf,
+line derived,,,,,,
+from an acute,,,,,,
+,T cell leukemia,,,,,
+Monocytes-,Monocytes-,UW,Y,F,"S. Heimfeld Laboratory,",http://genome.ucsc.edu/ENCODE/protocols/
+CD14+,CD14+ are,,,,Fred Hutchison Cancer,cell/human/MonoCD14_Stam_protocol.pdf
+,CD14-positive,,,,Research Center,
+,cells from,,,,,
+,human,,,,,
+,leukapheresis,,,,,
+,product,,,,,
+NB4,acute,UW,Y,U,Refer to protocol,http://genome.ucsc.edu/ENCODE/protocols/
+promyelocytic,,documents for differing,,,,cell/human/NB4_Stam_protocol.pdf
+leukemia cell,,sources,,,,
+,line,,,,,
+NH-A,normal human,UW,N,U,Lonza CC-2565,http://genome.ucsc.edu/ENCODE/protocols/
+,astrocytes,,,,,cell/human/
+NHDF-Ad,Adult Normal,UW,N,F,"Lonza CC-2511,",http://genome.ucsc.edu/ENCODE/protocols/
+Human Dermal,,,CC-2511T225,,cell/human/NHDF-Ad_Stam_protocol.pdf,
+,Fibroblasts,,,,,
+NHDF-neo,Neonatal,UW,Y,U,Lonza CC-2509,http://genome.ucsc.edu/ENCODE/protocols/
+,Human Dermal,,,,,cell/human/NHDF-neo_Stam_protocol.pdf
+,Fibroblasts,,,,,
+NHLF,Normal Human,UW,Y,U,Lonza CC-2512,http://genome.ucsc.edu/ENCODE/protocols/
+Lung,,,,cell/human/NHLF_Stam_protocol.pdf,,
+,Fibroblasts,,,,,
+NT2-D1,Human,,N,M,ATCC CRL-1973,http://genome.ucsc.edu/ENCODE/protocols/
+,malignant,,,,,cell/human/NT2-D1_protocol.pdf
+,pluripotent,,,,,
+,embryonal,,,,,
+,cancer cell line,,,,,
+,- Induced by,,,,,
+,RA to neuronal,,,,,
+PANC-1,pancreatic,UW,Y,M,ATCC CRL-1469,http://genome.ucsc.edu/ENCODE/protocols/
+,carcinoma,,,,,cell/human/PANC-1_Stam_protocol.pdf
+PrEC,Human,UW,N,M,Lonza CC-2555,http://genome.ucsc.edu/ENCODE/protocols/
+,Prostate,,,,,cell/human/PrEC_Stam_protocol.pdf
+,Epithelial Cell,,,,,
+,Line,,,,,
+,(PrEC/NHPRE),,,,,
+Thurman et al. 2011,,,,,,
+,,,Page 27,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+RPTEC,Renal Proximal,UW,Y,U,"Lonza CC-2553,",http://genome.ucsc.edu/ENCODE/protocols/
+,Tubule,,,,CC-2553T225,cell/human/RPTEC_Stam_protocol.pdf
+,Epithelial Cells,,,,,
+SAEC,Small Airway,UW,Y,U,Lonza CC-2547,http://genome.ucsc.edu/ENCODE/protocols/
+,Epithelial Cells,,,,,cell/human/SAEC_Stam_protocol.pdf
+SKMC,Human,UW,Y,U,Lonza CC-2561,http://genome.ucsc.edu/ENCODE/protocols/
+Skeletal,,,,,cell/human/SkMC_Stam_protocol.pdf,
+,Muscle Cells,,,,,
+SK_N_MC,Neuro-,UW,Y,F,ATCC HBT-10,http://genome.ucsc.edu/ENCODE/protocols/
+,epithelioma cell,,,,,cell/human/SK-N-MC_Stam_protocol.pdf
+,line derived,,,,,
+,from a,,,,,
+,metastatic,,,,,
+,supra-orbital,,,,,
+,human brain,,,,,
+,tumor,,,,,
+SK-N-,neuroblastoma,UW,Y,F,ATCC HTB-11,http://genome.ucsc.edu/ENCODE/protocols/
+SH_RA,cell line,,,,cell/human/Stam_15_protocols.pdf,
+,differentiated,,,,,
+,w/ retinoic acid,,,,,
+Th2,Primary human,UW,N,U,None (primary pheresis of,http://genome.ucsc.edu/ENCODE/protocols/
+,Th2 T cells,,,,single normal subject),cell/human/Th2_Stam_protocol.pdf
+WERI-Rb-1,retinoblastoma,UW,Y,F,ATCC HTB-169,http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,,cell/human/WERI-Rb-1_Stam_protocol.pdf
+WI-38,Embryonic,UW,Y,F,"Dr. Carl Mann, SBIGeM",http://genome.ucsc.edu/ENCODE/protocols/
+,Lung Fibroblast,,,,,cell/human/WI38_Stam_protocol.pdf
+,"Cells, hTERT",,,,,
+,"immortalized,",,,,,
+,includes Raf1,,,,,
+,construct,,,,,
+WI-38_TAM,Embryonic lung,UW,Y,F,"Dr. Carl Mann, SBIGeM",http://genome.ucsc.edu/ENCODE/protocols/
+fibroblasts,,,,,cell/human/WI38_Stam_protocol.pdf,
+immortilized,,,,,,
+hTERT -,,,,,,
+Tamoxifen,,,,,,
+,treated,,,,,
+CD20,Human B Cells,UW,Y,F,"S. Heimfeld Laboratory,",http://genome.ucsc.edu/ENCODE/protocols/
+,,,,,Fred Hutchison Cancer,cell/human/CD20+_Stam_protocol.pdf
+,,,,,Research Center,
+CD34,Mobilized,UW,N,F,"S. Heimfeld Laboratory,",http://www.roadmapepigenomics.org/files/pr
+primary CD34-,,Fred Hutchison Cancer,,,,otocols/experimental/dnaseI_sensitivity/Hem
+positive cells,,Research Center,,,,atopoieticCells_DNaseTreatment_v5_UW-
+from human,,,,,,NREMC.pdf
+leukapheresis,,,,,,
+,product,,,,,
+Th0,Unstimulated,Duke,N,M,Dr. Robin Haton at,submitted
+,Th0 cells,,,,University of Alabama,
+,isolated from,,,,,
+,Adults' blood,,,,,
+HSMM,embryonic,Duke,N,U,Duke/UNC/UT/EBI,http://genome.ucsc.edu/ENCODE/protocols/
+_emb,myoblast,ENCODE group Muscle,,,,cell/human/HSMMe_Crawford_protocol.pdf
+,,,,,needle biopsies,
+Ishikawa/,endometrial,Duke,N,F,SIGMA-ALDRICH,http://genome.ucsc.edu/ENCODE/protocols/
+Estradiol_,adeno-,,,,99040201,cell/human/Ishikawa_Crawford_protocol.pdf
+10nM_,carcinoma cells,,,,,
+30m,treated with 10,,,,,
+,nM 17-,,,,,
+,bestradiol for,,,,,
+,30 min,,,,,
+Ishikawa/,endometrial,Duke,N,F,SIGMA-ALDRICH,http://genome.ucsc.edu/ENCODE/protocols/
+4OHTAM_,adeno-,99040201,,,cell/human/Ishikawa_Crawford_protocol.pdf,
+100nM_,carcinoma,,,,,
+30m,treated with,,,,,
+,100 nM 4-OH,,,,,
+,Tamoxifen for,,,,,
+,30 min,,,,,
+RWPE1,Prostate,Duke,N,M,ATCC CRL-11609,http://genome.ucsc.edu/ENCODE/protocols/
+,epithelial,,,,,cell/human/RWPE1_Crawford_protocol.pdf
+Thurman et al. 2011,,,,,,
+Page 28,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+8988T,human,Duke,N,F,DSMZ ACC 162,http://genome.ucsc.edu/ENCODE/protocols/
+,pancreas,,,,,cell/human/8988T_Crawford_protocol.pdf
+,adeno-,,,,,
+,carcinoma (PA-,,,,,
+,"TU-8988T),",,,,,
+,"""established in",,,,,
+,1985 from the,,,,,
+,liver metastasis,,,,,
+,of a primary,,,,,
+,pancreatic,,,,,
+,adeno-,,,,,
+,carcinoma from,,,,,
+,a 64-year-old,,,,,
+,"woman"" -",,,,,
+,DSMZ,,,,,
+AoSMC/,aortic smooth,Duke,N,U,Lonza CC-2571,http://genome.ucsc.edu/ENCODE/protocols/
+serum_,muscle cells,,,,,cell/human/AoSMC_Crawford_protocol.pdf
+free_,treated in,,,,,
+media,serum-free,,,,,
+,media for 36 h,,,,,
+Chorion,chorion cells,Duke,N,U,Dr. Amy Murtha at Duke,http://genome.ucsc.edu/ENCODE/protocols/
+(outermost of,,"University (Durham, NC)",,,,cell/human/Chorion_and_decidua_Crawford
+two fetal,,,,,,_protocol.pdf
+"membranes),",,,,,,
+fetal,,,,,,
+membranes,,,,,,
+were collected,,,,,,
+from women,,,,,,
+who underwent,,,,,,
+planned,,,,,,
+cesarean,,,,,,
+delivery at,,,,,,
+"term, before",,,,,,
+labor and,,,,,,
+without rupture,,,,,,
+,of membranes.,,,,,
+CLL,chronic,Duke,N,F,"Dr. Jennifer Brown,",http://genome.ucsc.edu/ENCODE/protocols/
+,lymphocytic,,,,"Department of Medicine,",cell/human/CLL_Crawford_protocol.pdf
+,"leukemia cell,",,,,Harvard Medical School,
+,T-cell,,,,,
+,lymphocyte,,,,,
+Fibrobl,Normal child,Duke,N,F,Coriell AG08470,http://genome.ucsc.edu/ENCODE/protocols/
+,fibroblast,,,,,cell/human/fibroblast_Crawford_protocol.pdf
+FibroP,normal,Duke,N,U,Paul Tesar at Case,http://genome.ucsc.edu/ENCODE/protocols/
+,fibroblasts,,,,Western University,cell/human/FibroP_Crawford_protocol.pdf
+,taken from,,,,,
+,individuals with,,,,,
+,Parkinson's,,,,,
+,"disease,",,,,,
+,"AG20443,",,,,,
+,AG08395 and,,,,,
+,AG08396 were,,,,,
+,pooled for this,,,,,
+,sample,,,,,
+Thurman et al. 2011,,,,,,
+Page 29,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+Gliobla,"glioblastoma,",Duke,N,U,Duke University Medical,http://genome.ucsc.edu/ENCODE/protocols/
+,these cells (aka,,,,"Center, requests for D54",cell/human/D54_Crawford_protocol.pdf
+,H54 and D54),,,,cells should be directed to,
+,come from a,,,,Darrell Bigner,
+,surgical,,,,,
+,resection from,,,,,
+,a patient with,,,,,
+,glioblastoma,,,,,
+,multiforme,,,,,
+,(WHO Grade,,,,,
+,IV). D54 is a,,,,,
+,commonly,,,,,
+,studied,,,,,
+,glioblastoma,,,,,
+,cell line8 that,,,,,
+,has been,,,,,
+,thoroughly,,,,,
+,9,,,,,
+,described,,,,,
+GM12891,"B-Lymphocyte,",Duke,N,M,Coriell GM12891,http://genome.ucsc.edu/ENCODE/protocols/
+,Lympho-,,,,,cell/human/GM12891_Crawford_protocol.pdf
+,"blastoid,",,,,,
+,International,,,,,
+,HapMap,,,,,
+,"Project,",,,,,
+,CEPH/Utah,,,,,
+,"pedigree 1463,",,,,,
+,Treatment:,,,,,
+,Epstein-Barr,,,,,
+,Virus,,,,,
+,transformed,,,,,
+GM12892,"B-Lymphocyte,",Duke,N,F,Coriell GM12892,http://genome.ucsc.edu/ENCODE/protocols/
+Lympho-,,,,,cell/human/GM12892_Crawford_protocol.pdf,
+"blastoid,",,,,,,
+International,,,,,,
+HapMap,,,,,,
+"Project,",,,,,,
+CEPH/Utah,,,,,,
+"pedigree 1463,",,,,,,
+Treatment:,,,,,,
+Epstein-Barr,,,,,,
+Virus,,,,,,
+,transformed,,,,,
+GM18507,Lympho-,Duke,N,M,Coriell GM18507,http://genome.ucsc.edu/ENCODE/protocols/
+,"blastoid,",,,,,cell/human/GM18507_protocol.pdf
+,International,,,,,
+,HapMap,,,,,
+,"Project, Yoruba",,,,,
+,"in Ibadan,",,,,,
+,"Nigera,",,,,,
+,Treatment:,,,,,
+,Epstein-Barr,,,,,
+,Virus,,,,,
+,transformed,,,,,
+GM19238,"B-Lymphocyte,",Duke,N,F,Coriell GM19238,http://genome.ucsc.edu/ENCODE/protocols/
+Lympho-,,,,,cell/human/GM19238_Crawford_protocol.pdf,
+"blastoid,",,,,,,
+International,,,,,,
+HapMap,,,,,,
+"Project, Yoruba",,,,,,
+"in Ibadan,",,,,,,
+"Nigera,",,,,,,
+Treatment:,,,,,,
+Epstein-Barr,,,,,,
+Virus,,,,,,
+transformed,,,,,,
+Thurman et al. 2011,,,,,,
+,,,Page 30,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+GM19239,"B-Lymphocyte,",Duke,N,M,Coriell GM19239,http://genome.ucsc.edu/ENCODE/protocols/
+,Lympho-,,,,,cell/human/GM19239_Crawford_protocol.pdf
+,"blastoid,",,,,,
+,International,,,,,
+,HapMap,,,,,
+,"Project, Yoruba",,,,,
+,"in Ibadan,",,,,,
+,"Nigera,",,,,,
+,Treatment:,,,,,
+,Epstein-Barr,,,,,
+,Virus,,,,,
+,transformed,,,,,
+GM19240,"B-Lymphocyte,",Duke,N,F,Coriell GM19240,http://genome.ucsc.edu/ENCODE/protocols/
+Lympho-,,,,,cell/human/GM19240_Crawford_protocol.pdf,
+"blastoid,",,,,,,
+International,,,,,,
+HapMap,,,,,,
+"Project, Yoruba",,,,,,
+"in Ibadan,",,,,,,
+"Nigera,",,,,,,
+Treatment:,,,,,,
+Epstein-Barr,,,,,,
+Virus,,,,,,
+,transformed,,,,,
+H9ES,human,Duke,N,F,WiCell WA09,http://genome.ucsc.edu/ENCODE/protocols/
+,embryonic,,,,,cell/human/BG02ES_and_H9ES_Myers_prot
+,stem cell,,,,,ocols.pdf
+,(hESC) H9,,,,,
+HeLa-,cervical,Duke,N,F,ATCC CCL-2.2,http://genome.ucsc.edu/ENCODE/protocols/
+S3/IFNa4h,carcinoma,,,,cell/human/HeLa-,
+,treated with,,,,S3_IFN_Crawford_protocol.pdf,
+,IFN-alpha for,,,,,
+,4h,,,,,
+Hepato-,Primary Human,Duke,N,B,Zin-Bio,http://genome.ucsc.edu/ENCODE/protocols/
+cytes,"Hepatocytes,",,,,,cell/human/Hepatocytes_Crawford_protocol.
+,liver perfused,,,,,pdf
+,"by enzymes to
+generate single
+cell suspension",,,,,
+HPDE6-,normal human,Duke,N,F,"Dr. Ming-Sound Tsao,",http://genome.ucsc.edu/ENCODE/protocols/
+E6E7,pancreatic duct,Ontario Cancer Institute,,,,cell/human/HPDE6-
+,cells,,,,,E6E7_Crawford_protocol.pdf
+,immortalized,,,,,
+,with E6E7,,,,,
+,gene of HPV,,,,,
+HTR8svn,Trophoblast,Duke,N,F,"Dr. Charles H. Graham,",http://genome.ucsc.edu/ENCODE/protocols/
+,(HTR-8/SVneo),,,,Department of Anatomy &,cell/human/HTR8svn_Crawford_protocol.pdf
+,cell line. A thin,,,,"Cell Biology, Queen's",
+,layer of,,,,"University at Kingston,",
+,ectoderm that,,,,"Kingston, Ontario, Canada",
+,forms the wall,,,,HTR8svhttp://genome.ucsc,
+,of many,,,,.edu/ENCODE/protocols/c,
+,mammalian,,,,ell/human/Trophobl_Crawf,
+,blastulas and,,,,ord_protocol.pdf,
+,functions in the,,,,,
+,nutrition and,,,,,
+,implantation of,,,,,
+,the embryo.,,,,,
+Huh-7.5,Hepatocellular,Duke,N,M,Dr. Ravi Jhaveri at Duke,http://genome.ucsc.edu/ENCODE/protocols/
+"carcinoma,",,University,,,cell/human/Huh-7.5_Crawford_protocol.pdf,
+hepatocytes,,,,,,
+selected for,,,,,,
+high levels of,,,,,,
+hepatitis C,,,,,,
+,replication,,,,,
+Huh-7,Hepatocellular,Duke,N,M,Dr. Ravi Jhaveri at Duke,http://genome.ucsc.edu/ENCODE/protocols/
+,carcinoma,,,,University,cell/human/Huh-7_Crawford_protocol.pdf
+Thurman et al. 2011,,,,,,
+Page 31,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+iPS,induced,Duke,N,B,"Dr. Josh Chenoweth,",http://genome.ucsc.edu/ENCODE/protocols/
+,pluripotent,,,,Laboratory of Molecular,cell/human/iPS_Crawford_protocol.pdf
+,stem cell,,,,"Biology, National Institutes",
+,derived from,,,,of Health,
+,skin fibroblast,,,,,
+LNCaP/,prostate,Duke,N,M,ATCC CRL-1740,http://genome.ucsc.edu/ENCODE/protocols/
+androgen,adeno-,,,,,cell/human/LNCaP_Crawford_protocol.pdf
+,carcinoma,,,,,
+,treated with,,,,,
+,"androgen,",,,,,
+,"""LNCaP clone",,,,,
+,FGC was,,,,,
+,isolated in,,,,,
+,1977 by J.S.,,,,,
+,"Horoszewicz,",,,,,
+,"et al., from a",,,,,
+,needle,,,,,
+,aspiration,,,,,
+,biopsy of the,,,,,
+,left,,,,,
+,supraclavicular,,,,,
+,lymph node of,,,,,
+,a 50-year-old,,,,,
+,caucasian male,,,,,
+,(blood type B+),,,,,
+,with confirmed,,,,,
+,diagnosis of,,,,,
+,metastatic,,,,,
+,prostate,,,,,
+,"carcinoma."" –",,,,,
+,ATCC.,,,,,
+MCF-7/,MCF7 cells,Duke,N,F,ECACC 86012803,http://genome.ucsc.edu/ENCODE/protocols/
+Hypoxia_,treated with,,,,cell/human/MCF-7_Crawford_protocol.pdf,
+LacAcid,hypoxia and,,,,,
+,lactose,,,,,
+Medullo,Medullo-,Duke,N,F,"Darrell Bigner, Duke",http://genome.ucsc.edu/ENCODE/protocols/
+,blastoma (aka,,,,University Medical Center,cell/human/D721_Crawford_protocol.pdf
+,"D721), surgical",,,,,
+,resection from,,,,,
+,a patient with,,,,,
+,medullo-,,,,,
+,blastoma as,,,,,
+,described by,,,,,
+,Darrell Bigner,,,,,
+,(1997),,,,,
+Melano,epidermal,Duke,N,U,ScienCell 2200,http://genome.ucsc.edu/ENCODE/protocols/
+,melanocytes,,,,,cell/human/Melano_Crawford_protocol.pdf
+Myometr,Myometrial,Duke,N,F,Dr. Jennifer Condon at,http://genome.ucsc.edu/ENCODE/protocols/
+,cells,,,,Magee Women's Research,cell/human/Myometr_Crawford_protocol.pdf
+,,,,,"Institute (Pittsburg, PA)",
+Osteobl,normal human,Duke,N,U,Lonza CC-2538,http://genome.ucsc.edu/ENCODE/protocols/
+osteoblasts,,,,,cell/human/Osteoblast_Crawford_protocol.p,
+,(NHOst),,,,,df
+PanIsletD,Dedifferentiate,Duke,N,B,National Disease,http://genome.ucsc.edu/ENCODE/protocols/
+,d human,,,,Research Interchange,cell/human/PanIsletD_Crawford_protocol.pdf
+,pancreatic,,,,(NDRI). PanIsletD,
+,islets from one,,,,,
+,of the sources,,,,,
+,for PanIslets,,,,,
+PanIslets,human,Duke,N,B,See protocol document,http://genome.ucsc.edu/ENCODE/protocols/
+pancreatic,,,,,cell/human/PanIslets_Crawford_protocol.pdf,
+,islets,,,,,
+pHTE,Primary Human,Duke,N,U,Dr. Cal Cotton at Case,http://genome.ucsc.edu/ENCODE/protocols/
+,Tracheal,,,,Western Reserve,cell/human/pHTE_Crawford_protocol.pdf
+,Epithelial Cells,,,,University,
+Thurman et al. 2011,,,,,,
+Page 32,,,,,,
+,,,,,,
+Cell line,Description,Lab,H,S,Source,Cell/Tissue Protocol
+ProgFib,"fibroblasts,",Duke,N,M,Progeria Research,http://genome.ucsc.edu/ENCODE/protocols/
+,Hutchinson-,,,,Foundation HGADFN167,cell/human/progeria_Crawford_protocol.pdf
+,Gilford progeria,,,,,
+,syndrome (cell,,,,,
+,"line HGPS,",,,,,
+,"HGADFN167,",,,,,
+,progeria,,,,,
+,research,,,,,
+,foundation),,,,,
+Stellate,Human Hepatic,Duke,N,U,Dr. Steve Choi at Duke,http://genome.ucsc.edu/ENCODE/protocols/
+,"Stellate Cells,",,,,University,cell/human/Stellate_Crawford_protocol.pdf
+,Liver that was,,,,,
+,perfused with,,,,,
+,collagenase,,,,,
+,and sellected,,,,,
+,for hepatic,,,,,
+,stellate cells by,,,,,
+,density,,,,,
+,gradient,,,,,
+T-47D,a human,Duke,N,F,ATCC HTB-133,http://genome.ucsc.edu/ENCODE/protocols/
+epithelial cell,,,,,cell/human/T47D_Myers_protocol.pdf,
+line derived,,,,,,
+from an,,,,,,
+mammary,,,,,,
+ductal,,,,,,
+,carcinoma.,,,,,
+Urothelia,A primary,Duke,N,F,lab of Dr. D Sens,http://genome.ucsc.edu/ENCODE/protocols/
+,culture of,,,,(University of N. Dakota),cell/human/Urothelia_Crawford_protocol.pdf
+,urothelial cells,,,,Urothelia,
+,derived from a,,,,,
+,12 year-old girl,,,,,
+,and,,,,,
+,immortalized,,,,,
+,by transfection,,,,,
+,with a,,,,,
+,temperature-,,,,,
+,sensitive SV-40,,,,,
+,large T antigen,,,,,
+,"gene, normal",,,,,
+,human ureter,,,,,
+,cells,,,,,
+Urothelia/U,Urotsa infected,Duke,N,F,lab of Dr. D Sens,http://genome.ucsc.edu/ENCODE/protocols/
+T189 by UT189,,(University of N. Dakota),,,,cell/human/Urothelia_Crawford_protocol.pdf

@@ -5,7 +5,7 @@ import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
 
 
-class UserController {
+class   UserController {
 
     UserService userService
 

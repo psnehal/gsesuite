@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en" class=".has-sticky-footer">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -35,7 +35,7 @@
                 <g:link controller="inputParam" action="tutorials"><span class="glyphicon glyphicon glyphicon-book"></span> Tutorials</g:link>
             </li>
             <li class="dropdown">
-                <g:link controller="inputParam" action="news"><span class="glyphicon glyphicon-list-alt"></span> News</g:link>
+                <g:link controller="inputParam" action="tutorials"><span class="glyphicon glyphicon-list-alt"></span> News</g:link>
 
             </li>
 
@@ -57,7 +57,7 @@
         </ul>
 
 
-            <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right">
                 <sec:ifLoggedIn>
                     <g:set var="userid" value="${sec.loggedInUserInfo(field:'id')}" />
                     <li><g:link controller="user" action="show" id="${userid}"><span class="glyphicon glyphicon-user"></span> <sec:username/> </g:link></li>

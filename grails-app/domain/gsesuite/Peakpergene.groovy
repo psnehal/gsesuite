@@ -7,6 +7,7 @@ class Peakpergene {
     String jobstatus
     String filename
     String ld
+    String sglist
 
 
     static constraints = {

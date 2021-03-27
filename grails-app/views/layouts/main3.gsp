@@ -61,7 +61,7 @@
 
         </ul>
 
-        <ul class="nav navbar-nav navbar-right">
+   <ul class="nav navbar-nav navbar-right">
             <sec:ifLoggedIn>
                 <g:set var="userid" value="${sec.loggedInUserInfo(field:'id')}" />
                 <li><g:link controller="user" action="show" id="${userid}"><span class="glyphicon glyphicon-user"></span> <sec:username/> </g:link></li>

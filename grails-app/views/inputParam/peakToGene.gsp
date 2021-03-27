@@ -190,7 +190,9 @@
     <g:javascript library='jquery'>
 
 
-
+  function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
 
 
         $(function () {
@@ -215,18 +217,64 @@
             alert("your test is hybrid");
         }
 
-        function uncheckgenetal() {
+     function uncheckgenetal() {
 
-             var ele = document.getElementsByName('maint');
+             var ele = document.getElementsByName('method');
+
+
+             var cont = document.getElementById("targetoptions");
+             cont.innerHTML = '';
+
+
+
+
 
              for(i = 0; i < ele.length; i++) {
                 if(ele[i].checked)
                     {
                 console.log(ele[i].value);
 
-                if(ele[i].value =='cellspecific')
+                if(ele[i].value =='cellspe')
                     {
                         console.log('cellspecific');
+
+                        var textfortar=  '<table>'
+                                            +'<tr>'
+                                            +'<th>Method</th>'
+                                            +'</tr>'
+                                            +'<tr>'
+                                            +'<td><label><input name="ctargets2" value="P2P"  type="checkbox" checked  /> ChIA-PET' +'</label></td>'
+                                            +'</tr>'
+                                            +'<tr>'
+                                            +'<td>'
+                                            +'<label>Cell Lines</label>'
+                                                +'<ul style="margin-left: 5em">'
+                                                +'<li><label><input name="ctargets" value="GM12878" id="gm" type="radio"/> GM12878 </label></li>'
+                                                +'<li><label><input name="ctargets" value="H1hESC" id="h1" type="radio"/> H1hESC </label></li>'
+                                                +'<li><label><input name="ctargets" value="HepG2" id="he" type="radio"/> HepG2 </label></li>'
+                                                +'<li><label><input name="ctargets" value="K562" id="k5" type="radio"/> K562 </label></li>'
+                                                +'<li><label><input name="ctargets" value="MCF7" id="hep" type="radio"/> MCF7'+'</label></li>'
+                                                +'</ul>'
+
+                                            +'</td>'
+                                            +'</tr>'
+
+                                            +'<tr>'
+                                            +'<td>'
+                                            +'<label>Loops from ChIA-PET</label>'
+                                            +'<ul style="margin-left: 5em">'
+                                            +'<li><label><input name="ctargets1" value="E1" id="E1" type="radio"/> 1 gene in loop</label></li>'
+                                            +'<li><label><input name="ctargets1" value="E2" id="E2" type="radio"/> ≤ 2  gene in loop</label></li>'
+                                            +'<li><label><input name="ctargets1" value="E3" id="E3" type="radio"/> ≤ 3 gene in loop</label></li>'
+                                            +'</ul>'
+
+                                            +'</td>'
+                                            +'</tr>'
+
+                                            +'</table>';
+                        cont.innerHTML = textfortar;
+
+
 
 
 
@@ -236,7 +284,34 @@
                         console.log('general');
 
                         var textfortar =
-                         +'<td align="right" valign="top"> <span class="formText">Encode Cell Specific</span></td>'
+                            '<table>'
+                            +'<tr>'
+                            +'<th>Method</th>'
+                            +'</tr>'
+                            +'<tr>'
+                            +'<td><label><input name="gtargets" value="P2P"  type="checkbox"/> ChIA-PET' +'</label></td>'
+                            +'</tr>'
+                            +'<tr>'
+                            +'<td><label><input name="gtargets" value="thurman"  type="checkbox"/> Thurman</label></td>'
+                            +'</tr>'
+                            +'<tr>'
+                            +'<td><label><input name="gtargets" value="fantom"  type="checkbox"/> FANTOMS</label></td>'
+                            +'</tr>'
+
+                            +'<td>'
+                                +'<label>Loops from ChIA-PET</label>'
+                                +'<ul style="margin-left: 5em">'
+                                +'<li><label><input name="gtargets1" value="E1" id="E1" type="radio"/> 1 gene in loop</label></li>'
+                                +'<li><label><input name="gtargets1" value="E2" id="E2" type="radio"/> ≤ 2  gene in loop</label></li>'
+                                +'<li><label><input name="gtargets1" value="E3" id="E3" type="radio"/> ≤ 3 gene in loop</label></li>'
+                            +'</ul>'
+
+                            +'</td>'
+                            +'</tr>'
+                            +'</table>';
+
+
+                        cont.innerHTML = textfortar
 
 
 
@@ -253,7 +328,7 @@
     }
 
 
-        function openModal() {
+        %{--function openModal() {
             //alert(document.getElementById("uploadfile").files.length);
             if(document.getElementById("uploadfile").files.length > 0) {
                 var mymodal = $('#myModal');
@@ -296,7 +371,7 @@
 
             }
 
-        }
+        }--}%
 
 
 
@@ -313,15 +388,119 @@
             }
         }
 
+        function returnToPreviousPage() {
+                     window.history.back();
+
+                }
+
+        function checkinput()
+        {
+
+            var combo = document.getElementById("sglist");
+
+            var emfile = 'false';
+
+
+            var x = document.getElementById("myFile");
+                     var txt = "";
+                     if ('files' in x) {
+                    if (x.files.length == 0) {
+                            emfile = 'true';
+                        }
+                    }
+
+
+
+               if(combo.selectedIndex <=0)
+                {
+
+                    alert("Please Select Species");
+                  $(this).find(':input[type=submit]').prop('disabled', true);
+
+
+
+
+                }
+
+               else if(emfile == 'true')
+                   {
+
+
+                        alert("Please select file");
+                  $(this).find(':input[type=submit]').prop('disabled', true);
+
+
+                   }
+               else{
+
+
+
+
+
+
+
+                   var cont = document.getElementById("locus");
+                    cont.innerHTML = '';
+
+                    var e = document.getElementById("sglist");
+                    var strUser = e.options[e.selectedIndex].value;
+
+             console.log(strUser);
+
+             if(strUser == "hg19")
+                 {
+                     var line =
+                    '<ul>'
+                    +'<li><label><input name="slist" value="promoter" id="prom" type="radio" checked/> Promoters</label></li>'
+                    +'<li><label><input name="slist" value="exons" id="exons" type="radio" /> Exons</label></li>'
+                    +'<li><label><input name="slist" value="introns" id="introns" type="radio" /> Introns</label></li>'
+                    +'<li><label><input name="slist" value="enhan" id="enhan" type="radio" /> Enhancer Only</label></li>'
+                    +'<li><label><input name="slist" value="distal" id="distal" type="radio"/> All distal regions (using enhancer-target gene links where available)</label></li>'
+                    +'<li><label><input name="slist" value="distno" id="distno" type="radio" /> All distal regions (not using enhancer-target gene links)</label></li>'
+                    +'<li><label><input name="slist" value="nearest_tss" id="tss" type="radio" /> The entire genome (using nearest TSS)</label></li>'
+                    +'</ul>';
+
+                 }
+             else
+                 {
+              var line =
+                    '<ul>'
+                    +'<li><label><input name="slist" value="promoter" id="prom" type="radio" checked/> Promoters</label></li>'
+                    +'<li><label><input name="slist" value="exons" id="exons" type="radio" /> Exons</label></li>'
+                    +'<li><label><input name="slist" value="introns" id="introns" type="radio" /> Introns</label></li>'
+                    +'<li><label><input name="slist" value="distno" id="distno" type="radio" /> All distal regions (not using enhancer-target gene links)</label></li>'
+                    +'<li><label><input name="slist" value="nearest_tss" id="tss" type="radio" /> The entire genome (using nearest TSS)</label></li>'
+                    +'</ul>';
+
+                 }
+
+
+
+
+              cont.innerHTML += line;
+
+
+               }
+
+               // alert("validations passed");
+               return true;
+
+
+
+        }
+
+
+
         function assignPeaksSubmit() {
 
              var cont = document.getElementById("content");
+
+             var e = document.getElementById("sglist");
+                    var strUser = e.options[e.selectedIndex].value;
+
+
+             console.log(strUser);
              cont.innerHTML = '';
-
-
-
-
-
             if (document.getElementById("prom").checked == true) {
 
 
@@ -374,231 +553,6 @@
                cont.innerHTML += pmtld;
 
                }
-            else if (document.getElementById("enhan").checked == true) {
-
-               //alert('yay enhancer is clicked');
-               console.log('enhancer loop');
-               var pmtld =
-
-                   '<table>'
-                   +'<tr>'
-                    +' <td align="right" valign="top"><span class="formText"><b>Enhancer <br/>Choose one or more methods to define enhancer regions?</b> </span></td>'
-
-                        +'<table>'
-                            +'<tr>'
-                            +'<th>Method</th><th>Description</th><th>No of cell types</th>'
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="regions" value="chromhmm"  type="checkbox"/> ChromHMM' +'</label></td>'
-                            +'<td>ENCODE ChromHMM UCSC tracks</td>'
-                            +'<td>9</td>'
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="regions" value="dnase"  type="checkbox"/> DNase-seq' +'</label></td>'
-                            +'<td>DNase hypersensitive sites (DHSs) </td>'
-                            +'<td>125</td>'
-                            +'</tr>'
-                            +'<tr>'
-                            +'<tr>'
-                            +'<td><label><input name="regions" value="thurman"  type="checkbox"/> Thurman</label></td>'
-                            +'<td>Distal and non-promoter DHS</td>'
-                            +'<td>32</td>'
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="regions" value="fantom"  type="checkbox"/> Fantom</label></td>'
-                            +'<td>Cap Analysis Gene Expression (CAGE) experiment-derived enhancers </td>'
-                            +'<td>~400</td>'
-                            +'</tr>'
-                        +'</table>'
-
-
-                    +'<td align="right" valign="top"> <span class="formText"><b>Method used for enhancer gene targets</b>'
-
-                    + '<br/><input name="maint" value="general"  type="radio" onclick="uncheckgenetal()"/>General </b> </span>.</td>'
-
-
-
-                         +'<table>'
-                            +'<tr>'
-                            +'<th>Method</th>'
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="gtargets" value="P2P"  type="checkbox"/> ChIA-PET' +'</label></td>'
-
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="gtargets" value="thurman"  type="checkbox"/> Thurman</label></td>'
-
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="gtargets" value="fantom"  type="checkbox"/> Fantom</label></td>'
-
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td><label><input name="gtargets" value="chomehmm"  type="checkbox"/> ChomHMM</label></td>'
-
-                            +'</tr>'
-                            +'<tr>'
-                            +'<td>'
-                                +'<label>Loops from ChIA-PET</label>'
-                                +'<ul style="margin-left: 5em">'
-                                +'<li><label><input name="gtargets1" value="E1" id="E1" type="radio"/> 1 gene in loop</label></li>'
-                                +'<li><label><input name="gtargets1" value="E2" id="E2" type="radio"/> ≤ 2  gene in loop</label></li>'
-                                +'<li><label><input name="gtargets1" value="E3" id="E3" type="radio"/> ≤ 3 gene in loop</label></li>'
-                            +'</ul>'
-
-                            +'</td>'
-                            +'</tr>'
-
-                         +'</table>'
-                           +'<td align="right" valign="top"> <span class="formText"><input name="maint" value="cellspecific"  type="radio" onclick="uncheckgenetal()"/>Encode Cell Specific</span></td>'
-                                            +'<table>'
-                                            +'<tr>'
-                                            +'<th>Method</th>'
-                                            +'</tr>'
-                                            +'<tr>'
-                                            +'<td><label><input name="ctargets2" value="P2P"  type="checkbox"/> ChIA-PET' +'</label></td>'
-
-
-                                            +'<tr>'
-                                            +'<td>'
-                                            +'<label>Cell Lines</label>'
-                                                +'<ul style="margin-left: 5em">'
-                                                +'<li><label><input name="ctargets" value="GM12878" id="gm" type="radio"/> GM12878 </label></li>'
-                                                +'<li><label><input name="ctargets" value="H1hESC" id="h1" type="radio"/> H1hESC </label></li>'
-                                                +'<li><label><input name="ctargets" value="HepG2" id="he" type="radio"/> HepG2 </label></li>'
-                                                +'<li><label><input name="ctargets" value="K562" id="k5" type="radio"/> K562 </label></li>'
-                                                +'<li><label><input name="ctargets" value="MCF7" id="hep" type="radio"/> MCF7'+'</label></li>'
-                                                +'</ul>'
-
-                                            +'</td>'
-                                            +'</tr>'
-
-                                            +'<tr>'
-                                            +'<td>'
-                                            +'<label>Loops from ChIA-PET</label>'
-                                            +'<ul style="margin-left: 5em">'
-                                            +'<li><label><input name="ctargets1" value="E1" id="E1" type="radio"/> 1 gene in loop</label></li>'
-                                            +'<li><label><input name="ctargets1" value="E2" id="E2" type="radio"/> ≤ 2  gene in loop</label></li>'
-                                            +'<li><label><input name="ctargets1" value="E3" id="E3" type="radio"/> ≤ 3 gene in loop</label></li>'
-                                            +'</ul>'
-
-                                            +'</td>'
-                                            +'</tr>'
-
-                                            +'</table>'
-
-
-
-
-
-               +'</tr>'
-               +'</table>';
-
-
-
-
-               cont.innerHTML += pmtld;
-
-               }
-             else if (document.getElementById("distal").checked == true) {
-
-               //alert('yay enhancer is clicked');
-               console.log('distal loop');
-               var pmtld =
-
-                '</table>'
-                   +'<tr>'
-    +' <td align="right" valign="top"><span class="formText"><b>Enhancer <br/>Choose one or more methods to define enhancer regions?</b> </span></td>'
-
-    +'<table>'
-    +'<tr>'
-    +'<th>Method</th><th>Description</th><th>No of cell types</th>'
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="regions" value="chromhmm"  type="checkbox"/> ChromHMM' +'</label></td>'
-    +'<td>ENCODE ChromHMM UCSC tracks</td>'
-    +'<td>9</td>'
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="regions" value="dnase"  type="checkbox"/> DNase-seq' +'</label></td>'
-    +'<td>DNase hypersensitive sites (DHSs) </td>'
-    +'<td>125</td>'
-    +'</tr>'
-    +'<tr>'
-    +'<tr>'
-    +'<td><label><input name="regions" value="thurman"  type="checkbox"/> Thurman</label></td>'
-    +'<td>Distal and non-promoter DHS</td>'
-    +'<td>32</td>'
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="regions" value="fantom"  type="checkbox"/> Fantom</label></td>'
-    +'<td>Cap Analysis Gene Expression (CAGE) experiment-derived enhancers </td>'
-    +'<td>400</td>'
-    +'</tr>'
-    +'</table>'
-
-    +'<td align="right" valign="top"> <span class="formText"><b>Method used for enhancer gene targets</b> <br/> General </b></span>.</td>'
-    +'<table>'
-    +'<tr>'
-    +'<th>Method</th>'
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="targets" value="P2P"  type="checkbox"/> ChIA-PET' +'</label></td>'
-
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="targets" value="thurman"  type="checkbox"/> Thurman</label></td>'
-
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="targets" value="fantom"  type="checkbox"/> Fantom</label></td>'
-
-    +'</tr>'
-    +'<tr>'
-    +'<td><label><input name="targets" value="chomehmm"  type="checkbox"/> ChomHMM</label></td>'
-
-    +'</tr>'
-    +'<tr>'
-    +'<td>'
-    +'<label>Loops from ChIA-PET</label>'
-    +'<ul style="margin-left: 5em">'
-    +'<li><label><input name="targets1" value="E1" id="E1" type="radio"/> 1 gene in loop</label></li>'
-    +'<li><label><input name="targets1" value="E2" id="E2" type="radio"/> ≤ 2  gene in loop</label></li>'
-    +'<li><label><input name="targets1" value="E3" id="E3" type="radio"/> ≤ 3 gene in loop</label></li>'
-    +'</ul>'
-
-    +'</td>'
-    +'</tr>'
-
-    +'</table>'
-    +'<td align="right" valign="top"> <span class="formText">Encode Cell Specific</span></td>'
-
-    +'<table>'
-    +'<tr>'
-    +'<td>'
-
-
-    +'<ul style="margin-left: 5em">'
-    +'<li><label><input name="targets" value="GM12878" id="gm" type="radio"/> GM12878 </label></li>'
-    +'<li><label><input name="targets" value="H1hSC" id="h1" type="radio"/> H1hSC </label></li>'
-    +'<li><label><input name="targets" value="HepG2" id="he" type="radio"/> HepG2 </label></li>'
-    +'<li><label><input name="targets" value="K562" id="k5" type="radio"/> K562 </label></li>'
-    +'<li><label><input name="targets" value="HepG2" id="hep" type="radio"/> HepG2'+'</label></li>'
-    +'</ul>'
-    +'</td>'
-    +'<td></td>'
-    +'<td></td>'
-    +'</tr>' +
-    +'</table>'
-    +'</tr>'
-               +'</table>';
-
-
-
-               cont.innerHTML += pmtld;
-
-               }
 
             else if (document.getElementById("distno").checked == true) {
 
@@ -617,7 +571,7 @@
                cont.innerHTML += pmtld;
 
                }
-            else if (document.getElementById("any").checked == true) {
+            else if (document.getElementById("tss").checked == true) {
 
                  var pmtld =
 
@@ -633,6 +587,142 @@
                cont.innerHTML += pmtld;
 
                }
+            else{
+
+                if( strUser =='hg19')
+                    {
+                        if (document.getElementById("enhan").checked == true) {
+
+                        //alert('yay enhancer is clicked');
+                       console.log('enhancer loop');
+                       var pmtld =
+
+                       '<table>'
+        +'<tr>'
+        +'<td align="right" valign="top"><span class="formText"><b>Choose one or more methods to define enhancer regions</b> </span></td>'
+        +'</tr>'
+        +'<tr>'
+        +'<table>'
+        +'<tr>'
+        +'<th>Method</th><th>Description</th><th style="margin-left: 4em"># of Enhancers </th><th># of cell types</th>'
+        +'</tr>'
+        +'<tr>'
+        +'<td nowrap><label><input name="regions" value="chromhmm"  type="checkbox"/> <a href="https://www.nature.com/articles/nmeth.1906" target="_blank">ChromHMM</a>' +'</label></td>'
+        +'<td>ENCODE ChromHMM UCSC tracks</td>'
+        +'<td>341715</td>'
+        +'<td> <a href="${resource(dir: 'images', file: 'chromehmm.txt')}" target="_blank" >9</a></td>'
+        +'</tr>'
+        +'<tr>'
+        +'<td><label><input name="regions" value="dnase"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/22955617" target="_blank"> DNase-seq </a>' +'</label></td>'
+        +'<td> DNase hypersensitive sites (DHSs) processed by ENCODE {Thurman, 2012 #41}</td>'
+        +'<td>1507916</td>'
+        +'<td> <a href="${resource(dir: 'images', file: 'DNAase_125.csv')}" target="_blank" >125</a> </td>'
+        +'</tr>'
+        +'<tr>'
+        +'<tr>'
+        +'<td><label><input name="regions" value="thurman"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/22955617" target="_blank">Thurman</a></label></td>'
+        +'<td>Distal and non-promoter DHS within 500 kb of the correlated promoter DHSs referred to as the first author of the publication </td>'
+        +'<td>469261</td>'
+        +'<td><a href="${resource(dir: 'images', file: 'thurman.csv')}" target="_blank" >79 cell types into grouped into 32 cell type category</a> </td></td>'
+        +'</tr>'
+        +'<tr>'
+        +'<td><label><input name="regions" value="fantom"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/25723102" target="_blank">FANTOM5</a></label></td>'
+        +'<td>Cap Analysis Gene Expression (CAGE) experiment-derived enhancers across <br/> distinct cell lines/tissue/primary cells from FANTOM5 project</td>'
+        +'<td>35540</td>'
+        +'<td><a href="${resource(dir: 'images', file: 'FANTOM5.csv')}" target="_blank" >~400</a> </td>'
+        +'</tr>'
+        +'</table>'
+        +'</tr>'
+        +'<tr>'
+        +' <br/><td align="right" valign="top"> <span class="formText"><b>Choose the method used for determining enhancer to targets genes</b></span></td>'
+        +'</tr>'
+        +'<tr>'
+        +'<table>'
+        +'<tr>'
+        +'<td><input type="radio" name="method" class="formObject" value="general" onclick="uncheckgenetal(this)"> General </td>'
+        +'<td><input type="radio" name="method" class="formObject" value="cellspe" onclick="uncheckgenetal(this)"> ENCODE Cell specific </td>'
+        +'</tr>'
+
+        +'</table>'
+        +'</tr>'
+        +'<tr>'
+        +'<div id="targetoptions"></div>'
+        +'</tr>'
+        +'</table>';
+
+
+
+
+               cont.innerHTML += pmtld;
+
+               }
+                        else if (document.getElementById("distal").checked == true) {
+
+               //alert('yay enhancer is clicked');
+               console.log('distal loop');
+               var pmtld =
+
+                 '<table>'
+    +'<tr>'
+    +'<td align="right" valign="top"><span class="formText"><b>Choose one or more methods to define enhancer regions?</b> </span></td>'
+    +'</tr>'
+    +'<tr>'
+    +'<table>'
+    +'<tr>'
+    +'<th>Method</th><th>Description</th><th>No of Enhancer </th><th>No of cell types</th>'
+    +'</tr>'
+    +'<tr>'
+    +'<td nowrap><label><input name="regions" value="chromhmm"  type="checkbox"/> <a href="https://www.nature.com/articles/nmeth.1906" target="_blank"> ChromHMM</a>' +'</label></td>'
+    +'<td>ENCODE ChromHMM UCSC tracks</td>'
+    +'<td>341715</td>'
+    +'<td> <a href="${resource(dir: 'images', file: 'chromehmm.txt')}" target="_blank" >9</a></td>'
+    +'</tr>'
+    +'<tr>'
+    +'<td><label><input name="regions" value="dnase"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/22955617" target="_blank"> DNase-seq </a>' +'</label></td>'
+    +'<td> DNase hypersensitive sites (DHSs) processed by ENCODE {Thurman, 2012 #41}</td>'
+    +'<td>1507916</td>'
+    +'<td> <a href="${resource(dir: 'images', file: 'DNAase_125.csv')}" target="_blank" >125</a> </td>'
+    +'</tr>'
+    +'<tr>'
+    +'<tr>'
+    +'<td><label><input name="regions" value="thurman"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/22955617" target="_blank"> Thurman</a></label></td>'
+    +'<td>Distal and non-promoter DHS within 500 kb of the correlated promoter DHSs referred to as the first author of the publication </td>'
+    +'<td>469261</td>'
+    +'<td><a href="${resource(dir: 'images', file: 'thurman.csv')}" target="_blank" >79 cell types into 32 cell type category</a> </td></td>'
+    +'</tr>'
+    +'<tr>'
+    +'<td><label><input name="regions" value="fantom"  type="checkbox"/> <a href="https://www.ncbi.nlm.nih.gov/pubmed/25723102" target="_blank"> FANTOM5</a></label></td>'
+    +'<td>Cap Analysis Gene Expression (CAGE) experiment-derived enhancers across distinct cell lines/tissue/primary cells from FANTOM5 project</td>'
+    +'<td>35540</td>'
+    +'<td><a href="${resource(dir: 'images', file: 'FANTOM5.csv')}" target="_blank" >~400</a> </td>'
+    +'</tr>'
+    +'</table>'
+    +'</tr>'
+    +'<tr>'
+    +' <br/><td align="right" valign="top"> <span class="formText"><b>Choose the method used for determining enhancer to targets genes</b></span></td>'
+    +'</tr>'
+    +'<tr>'
+    +'<table>'
+    +'<tr>'
+    +'<td><input type="radio" name="method" class="formObject" value="general" onclick="uncheckgenetal(this)"> General </td>'
+    +'<td><input type="radio" name="method" class="formObject" value="cellspe" onclick="uncheckgenetal(this)"> ENCODE Cell specific </td>'
+    +'</tr>'
+
+    +'</table>'
+    +'</tr>'
+    +'<tr>'
+    +'<div id="targetoptions"></div>'
+    +'</tr>'
+    +'</table>';
+
+
+               cont.innerHTML += pmtld;
+
+               }
+
+                    }
+
+            }
 
 
         }
@@ -744,7 +834,7 @@
                 document.getElementById("demo2").innerHTML = txt;
             }
 
-              $("#myFile").change(function () {
+        $("#myFile").change(function () {
             var formData = new FormData();
             formData.append('file', this.files[0]);
 
@@ -805,6 +895,7 @@
             $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 
                 var $target = $(e.target);
+                console.log("show option");
 
                 if ($target.parent().hasClass('disabled')) {
                     return false;
@@ -814,11 +905,47 @@
             $(".next-step").click(function (e) {
 
                 var $active = $('.wizard .nav-tabs li.active');
-                $active.next().removeClass('disabled');
-                nextTab($active);
+                console.log(document.getElementById("myFile"));
+
+
+
+                var combo = document.getElementById("sglist");
+
+
+                var emfile = 'false';
+
+
+                var x = document.getElementById("myFile");
+                var txt = "";
+                if ('files' in x) {
+                    if (x.files.length == 0) {
+                        emfile = 'true';
+                    }
+                }
+
+
+                if(combo.selectedIndex <=0 || emfile =='true' )
+                {
+                    console.log("Please Select Species from inside or select file");
+
+                }
+
+                else
+                {
+
+                    $active.next().removeClass('disabled');
+                    console.log("next option");
+
+                    //console.log ( $(active.target).attr('id') );
+
+                    nextTab($active);
+
+                }
+
 
             });
             $(".prev-step").click(function (e) {
+                console.log("previ option");
 
                 var $active = $('.wizard .nav-tabs li.active');
                 prevTab($active);
@@ -867,10 +994,12 @@
 
 
                 <div class="bhoechie-tab-content active">
-                    <h7>Peak to Gene Assignment </h7>
-                    <p>Just want to find the target genes for your genomic regions?  Upload your set of genomic regions to assign them to genes based on any of our
-                        <a href="#" data-toggle="tooltip" class="one" title="A Locus Definition where a gene locus is defined as the region spanning the midpoints between adjacent TSSs and TESs.!">Gene Locus definition</a></span>
-                        nearest TSS, <1kb from a TSS, <5kb from a TSS, exons, introns, enhancers, etc</p>
+                    <h7>Link Genomic Regions to Target Genes </h7>
+                    <p>
+                        Just want to find the target genes for your genomic regions? Upload your set of genomic regions to assign them to target genes based on the selection of regulatory regions, including enhancers, promoters, whole genome, exons, introns, etc. For enhancer to target gene assignments, we use human genome version hg19, however, multiple species and multiple reference genome versions are available for all other regulatory regions. The human enhancer to target gene assignments can be generated by selecting data from a variety of sources and methods.
+
+                    </p>
+
                     <div class="spacer"></div>
                 </div>
 
@@ -899,7 +1028,7 @@
                         </li>
 
                         <li role="presentation" class="disabled">
-                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2" >
+                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2" onclick="checkinput()" >
                                 <span class="round-tab">
                                     <i class="glyphicon glyphicon-pencil"></i>
                                 </span>
@@ -928,39 +1057,57 @@
                     <div class="tab-content">
                         <div class="tab-pane active" role="tabpanel" id="step1">
                             <h3>Step 1: Upload the file</h3>
+                            <hr>
 
 
                                         <table>
-                                            <tr><td align="right" valign="top"><span class="formText"><b>Input file</b>
-                                                <td><input type="file" name="myfile" id="myFile" multiple size="50" onchange="myFunction2()">
-                                                    <p id="demo2"></p>
+                                            <tr>
+                                                <td align="right" valign="top" width="140"><span
+                                                        class="formText"><b>Select Species and genome version</b></span></td>
+                                                <td style="padding-left:10px"><select name="sglist" id="sglist" size="1" class="formObject">
+                                                    <option value="">Select Genome</option>
+                                                    <option value="hg19">Human (hg19)</option>
+                                                    <option value="hg38">Human (hg38)</option>
+                                                    <option value="mm9">Mouse (mm9)</option>
+                                                    <option value="mm10">Mouse (mm10)</option>
+                                                    <option value="rn4">Rat (rn4)</option>
+                                                    <option value="rn5">Rat (rn5)</option>
+                                                    <option value="rn6">Rat (rn6)</option>
+                                                    <option value="dm3">D. melanogaster (dm3)</option>
+                                                    <option value="dm6">D. melanogaster (dm6)</option>
+                                                    <option value="dre">D. Zebrafish (danRer10)</option>
+                                                </select>
+                                                    <br/> <br/><br/> <br/>
+                                                </td>
+                                            </tr>
+                                            <tr><td nowrap="" align="right" valign="top"><span class="formText"><b>Input file : </b>
+                                                <td style="padding-left:10px"><div class="mx-4"> <input type="file" name="myfile" id="myFile" multiple size="50" onchange="myFunction2()"></div>
+                                                <p id="demo2"></p>
+                                                    <span class="footnote">The following formats are fully supported via their file extensions: .bed, .broadPeak, .narrowPeak, .gff3, .gff2, .gff, and .bedGraph or .bdg. BED3 through BED6 files are supported under the .bed extension. Files without these extensions are supported under the conditions that the first 3 columns correspond to 'chr', 'start', and 'end' and that there is either no header column, or it is commented out.
+                                                    Example file can be found <a href="${resource(dir: 'images', file: 'E2A.txt')}" target="_blank" >here</a> </span>
                                             </td>
                                             </tr>
                                         </table>
 
 
                             <ul class="list-inline pull-right">
-                                <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                <li><button type="button" class="btn btn-primary next-step" onclick="return checkinput();">Save and continue</button></li>
                             </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step2">
                             <h3>Step 2: Assign peaks in</h3>
+                            <hr>
 
-                                <ul>
-                                    <li><label><input name="slist" value="promoter" id="prom" type="radio" /> Promoters</label></li>
-                                    <li><label><input name="slist" value="exons" id="exons" type="radio" /> Exons</label></li>
-                                    <li><label><input name="slist" value="introns" id="introns" type="radio" /> Introns</label></li>
-                                    <li><label><input name="slist" value="enhan" id="enhan" type="radio" /> Enhancer Only</label></li>
-                                    <li><label><input name="slist" value="distal" id="distal" type="radio"/> All distal regions (using enhancer-target gene links where available)</label></li>
-                                    <li><label><input name="slist" value="distno" id="distno" type="radio" /> All distal regions (not using enhancer-target gene links)</label></li>
-                                    <li><label><input name="slist" value="nearest_tss" id="tss" type="radio" /> The entire genome (using nearest TSS)</label></li>
-                                </ul>
+                            <div id="locus">
+                            </div>
+                        <br/>
                                 <span class="footnote">
                                     Note: To annotate the entire genome with enhancer-gene target links, combine the Promoters 5kb option with one of the All distal regions (using enhancer-gene target links) options.
+                                    Some choices may have one option.
 
                                 </span>
 
-
+                            <br/>
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
                                 <li><button type="button" class="btn btn-primary next-step" onclick="assignPeaksSubmit()">Save and continue</button></li>
@@ -968,15 +1115,21 @@
                         </div>
                         <div class="tab-pane" role="tabpanel" id="step3">
 
+                            <h3>Step 3: Choose how to assign to:</h3>
+
+
+                            <hr>
 
                             <div id="content">
                             </div>
 
+
+
                             <ul class="list-inline pull-right">
                                 <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                                <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+
                                 <g:submitButton name="submit"  value="Submit"
-                                                class="buttonsubmit"/>
+                                                class=" btn btn-primary buttonsubmit"/>
                             </ul>
                         </div>
                         <div class="tab-pane" role="tabpanel" id="complete">

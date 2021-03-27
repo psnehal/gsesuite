@@ -57,6 +57,7 @@
         </ul>
 
 
+
         <ul class="nav navbar-nav navbar-right">
             <sec:ifLoggedIn>
                 <g:set var="userid" value="${sec.loggedInUserInfo(field:'id')}" />
@@ -71,6 +72,7 @@
             </sec:ifNotLoggedIn>
 
         </ul>
+
 
     <br/>
     <br/>

@@ -50,7 +50,7 @@ dependencies {
     compile 'org.grails.plugins:spring-security-core:3.2.1'
     compile "org.grails.plugins:export:2.0.0"
     compile files('/Users/snehalpatil/Documents/GithubProjects/gsesuite/gsesuite/org.json.jar')
-    compile files('/Users/snehalpatil/Documents/proxreg/REngine.jar','/Users/snehalpatil/Documents/GithubProjects/javax.mail-1.5.2.jar','/Users/snehalpatil/Documents/proxreg/RserveEngine.jar')
+    compile files('/Users/snehalpatil/Documents/proxreg/REngine.jar','/Users/snehalpatil/Documents/proxreg/javax.mail-1.5.2.jar','/Users/snehalpatil/Documents/proxreg/RserveEngine.jar')
     compile 'org.apache.commons:commons-lang3:3.6'
     // https://mvnrepository.com/artifact/com.google.code.gson/gson
     compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'

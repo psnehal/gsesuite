@@ -11,7 +11,9 @@
                 <div class="well well-sm">
                     <form class="form-horizontal" action="" method="post">
                         <fieldset>
-                            <legend class="text-center">Contact us</legend>
+
+
+                            %{--<g:form action="sendemail" method="post" id="upform" name="upform"  enctype="multipart/form-data">
 
                             <!-- Name input-->
                             <div class="form-group">
@@ -43,7 +45,51 @@
                                     <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                                 </div>
                             </div>
-                        </fieldset>
+
+                            </g:form>--}%
+
+                            <div id="create-displayData" class="content scaffold-create mt-5" role="main">
+                                <div class="container-fluid">
+                                    <div class="card">
+                                        <div class="row">
+
+                                            <div class="col-12 col-md-12">
+
+                                                <h3><b>CONTACT</b></h3>
+
+                                                <p>Site created by Snehal Patil, <u>snehal@med.umich.edu</u></p>
+                                                <br/>
+
+                                                    <p><b>Contributors: &nbsp;</b> Qin T, Lee C, Cavalcante R, Orchard P, Yao H, Zhang H, Wang S, Patil S, Boyle AP, Sartor MA.
+
+
+                                                <p ><b>Contact:</b>  Maureen Sartor (sartorma@med.umich.eduu) and Tingting Qin (qinting@med.umich.edu),
+
+
+
+                                            <p>Department of Computational Medicine & Bioinformatics | University of Michigan Medical School</p>
+
+                                                <p>University of Michigan</p>
+                                                <p>1415 Washington Heights</p>
+                                                <p> Ann Arbor, MI 48109-2029</p>
+                                                <br/>
+
+                                            </p>Fax: 734-763-2215</p>
+
+
+                                            </div></div>
+
+
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+
+
+            </fieldset>
                     </form>
                 </div>
             </div>
